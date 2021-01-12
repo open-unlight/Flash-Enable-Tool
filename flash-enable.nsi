@@ -56,7 +56,7 @@ Unicode True
   !define MUI_FINISHPAGE_TEXT "Restart Chrome and Edge to take effect."
   !define MUI_WELCOMEPAGE_TITLE "Open Unlight Flash Enable Tool"
   !define MUI_WELCOMEPAGE_TITLE_3LINES
-  !define MUI_WELCOMEPAGE_TEXT "Enable Flash plugin in Chrome and Edge.$\r$\nPowered by Open Unlight."
+  !define MUI_WELCOMEPAGE_TEXT "Enable Flash plugin in Chrome and Edge.$\r$\n$\r$\nCredit: Piaf$\r$\n$\r$\nPowered by Open Unlight."
 
 ;--------------------------------
 
@@ -79,11 +79,12 @@ FunctionEnd
   FileOpen $9 "${file}" w
   IfErrors 0 +2
     MessageBox MB_OK "Write mms.cfg error." 0 done_${wcUniqueID}
-  ;FileWrite $9 "ErrorReportingEnable=1$\r$\n"
-  ;FileWrite $9 "TraceOutputFileEnable=1$\r$\n"
-  ;FileWrite $9 "PolicyFileLog=1$\r$\n"
-  ;FileWrite $9 "AutoUpdateDisable=1$\r$\n"
-  ;FileWrite $9 "EOLUninstallDisable=1$\r$\n"
+  FileWrite $9 "ErrorReportingEnable=1$\r$\n"
+  FileWrite $9 "AllowListRootMovieOnly=1$\r$\n"
+  FileWrite $9 "TraceOutputFileEnable=1$\r$\n"
+  FileWrite $9 "PolicyFileLog=1$\r$\n"
+  FileWrite $9 "AutoUpdateDisable=1$\r$\n"
+  FileWrite $9 "EOLUninstallDisable=1$\r$\n"
   FileWrite $9 "EnableWhitelist=1$\r$\n"
   FileWrite $9 "EnableAllowList=1$\r$\n"
   FileWrite $9 "AllowListUrlPattern=*://*.unlight.app/$\r$\n"
